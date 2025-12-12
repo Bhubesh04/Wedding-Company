@@ -2,30 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
 .quiz-background {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('/cloud.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: -1;
+  z-index: -2;
 }
 
 .quiz-background::after {
@@ -37,8 +51,11 @@ body {
 }
 
 .quiz-gradient-overlay {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     135deg,
     rgba(173, 216, 230, 0.3) 0%,
@@ -46,6 +63,7 @@ body {
     rgba(176, 224, 230, 0.3) 100%
   );
   pointer-events: none;
+  z-index: -1;
 }
 
 .main-card-gradient {

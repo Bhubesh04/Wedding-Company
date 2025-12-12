@@ -14,12 +14,13 @@ export const NavigationButtons = ({
   isLastQuestion,
 }: NavigationButtonsProps) => {
   return (
-    <div className="flex gap-[16px] items-center justify-center">
+    <div className="flex gap-3 sm:gap-4 items-center justify-center">
+      {/* LEFT CONTROL - PREVIOUS BUTTON */}
       <button
         type="button"
         onClick={onPrevious}
         disabled={!canGoPrevious}
-        className={`w-[44px] h-[44px] rounded-[10px] flex items-center justify-center transition-all duration-200 focus:outline-none border shadow-sm ${
+        className={`w-9 sm:w-10 h-9 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-200 focus:outline-none border shadow-sm ${
           canGoPrevious
             ? 'bg-[#E5F0FA] text-[#2C3E50] border-[#C6E5FF] hover:bg-[#D4E8FF]'
             : 'bg-[#E5F0FA] text-gray-300 cursor-not-allowed border-[#C6E5FF]'
@@ -28,7 +29,7 @@ export const NavigationButtons = ({
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-4 w-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -42,11 +43,12 @@ export const NavigationButtons = ({
         </svg>
       </button>
       
+      {/* RIGHT CONTROL - NEXT BUTTON */}
       <button
         type="button"
         onClick={onNext}
         disabled={!canGoNext}
-        className={`w-[44px] h-[44px] rounded-[10px] flex items-center justify-center transition-all duration-200 focus:outline-none border shadow-sm ${
+        className={`w-9 sm:w-10 h-9 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-200 focus:outline-none border shadow-sm ${
           canGoNext
             ? 'bg-[#5BA3E5] hover:bg-[#4A90D9] text-white border-[#4A90D9] hover:shadow-md'
             : 'bg-[#E5F0FA] text-gray-300 cursor-not-allowed border-[#C6E5FF]'
@@ -55,7 +57,7 @@ export const NavigationButtons = ({
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-4 w-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

@@ -58,12 +58,12 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="relative w-full h-full flex flex-col px-4 md:px-[80px]"
+      className="relative w-full h-full flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-5"
     >
-      <div className="flex flex-col items-center w-full flex-1 pt-[60px] gap-6 pb-[100px]">
+      <div className="flex flex-col items-center w-full max-w-4xl gap-2 sm:gap-3">
         <header className="text-center w-full">
           <h1
-            className="font-serif-display font-normal italic text-[56px] text-[#005B8F] text-center leading-tight"
+            className="font-serif-display font-normal italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#005B8F] text-center leading-tight"
             style={{ letterSpacing: '-2px' }}
           >
             Test Your Knowledge
@@ -72,37 +72,39 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
 
         <div className="text-center w-full">
           <p
-            className="font-manrope font-normal text-[16px] leading-[22px] text-[#15313D] text-center"
+            className="font-manrope font-normal text-xs sm:text-sm md:text-base leading-snug text-[#15313D] text-center"
             style={{ letterSpacing: '-0.2px' }}
           >
             Answer all questions to see your results
           </p>
         </div>
 
-        <div className="w-full max-w-[897px] px-4">
+        <div className="w-full mt-2 sm:mt-3">
           <ProgressBar
             currentIndex={currentQuestionIndex}
             totalQuestions={quizQuestions.length}
           />
         </div>
 
-        <div className="w-full max-w-[897px] px-4">
-          <QuestionCard
-            question={currentQuestion}
-            selectedOptionId={selectedOptionId}
-            onSelectOption={handleSelectOption}
-          />
-        </div>
-      </div>
+        <div className="w-full flex items-end justify-between gap-3 sm:gap-4">
+          <div className="flex-1">
+            <QuestionCard
+              question={currentQuestion}
+              selectedOptionId={selectedOptionId}
+              onSelectOption={handleSelectOption}
+            />
+          </div>
 
-      <div className="absolute bottom-[40px] right-4 md:right-[80px] flex gap-[16px]">
-        <NavigationButtons
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-          canGoPrevious={canGoPrevious}
-          canGoNext={canGoNext}
-          isLastQuestion={isLastQuestion}
-        />
+          <div className="flex-shrink-0">
+            <NavigationButtons
+              onPrevious={handlePrevious}
+              onNext={handleNext}
+              canGoPrevious={canGoPrevious}
+              canGoNext={canGoNext}
+              isLastQuestion={isLastQuestion}
+            />
+          </div>
+        </div>
       </div>
 
       {currentQuestionIndex === 0 && <PawBubble />}

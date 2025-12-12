@@ -6,12 +6,12 @@ interface PageLayoutProps {
 
 export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <main className="relative w-screen h-screen overflow-hidden flex items-center justify-center">
+    <main className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       <div className="quiz-background" />
       <div className="quiz-gradient-overlay" />
 
       <div
-        className="relative mx-auto w-[96vw] h-[90vh] max-w-[1542px] max-h-[856px] rounded-[60px]"
+        className="relative w-full h-full max-w-6xl rounded-3xl sm:rounded-4xl md:rounded-5xl p-3 sm:p-4 md:p-5 flex flex-col"
         style={{
           background:
             'linear-gradient(135deg, rgba(180, 221, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)',
@@ -19,7 +19,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
         }}
       >
         <div
-          className="absolute top-[40px] left-[40px] right-[40px] bottom-[56px] bg-[#F7FCFF] rounded-[50px] border border-[#E0EEF7] shadow-lg overflow-visible flex flex-col"
+          className="w-full flex-1 bg-[#F7FCFF] rounded-2xl sm:rounded-3xl md:rounded-4xl border border-[#E0EEF7] shadow-lg overflow-hidden flex flex-col p-4 sm:p-5 md:p-6"
         >
           {children}
         </div>

@@ -15,9 +15,9 @@ export const OptionButton = ({ option, isSelected, onSelect }: OptionButtonProps
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`
-        w-full h-[72px] rounded-[12px] border border-[1.5px]
-        py-5 px-6
-        text-center text-[16px] font-bold
+        w-full h-auto min-h-11 sm:min-h-12 md:min-h-14 rounded-lg border border-[1.5px]
+        py-2 sm:py-3 px-3 sm:px-4 md:px-5
+        text-center text-xs sm:text-sm md:text-base font-bold
         transition-all duration-200
         flex items-center justify-center
         focus:outline-none focus:ring-2 focus:ring-[#15313D] focus:ring-offset-2

@@ -9,11 +9,11 @@ export const ProgressBar = ({ currentIndex, totalQuestions }: ProgressBarProps) 
   const segments = Array.from({ length: totalQuestions }, (_, i) => i);
   
   return (
-    <div className="w-full flex gap-[28px] mb-12">
+    <div className="w-full flex gap-2 sm:gap-3 mb-4 sm:mb-5">
       {segments.map((index) => (
         <div
           key={index}
-          className="flex-1 h-[5px] bg-[#D3DFE8] rounded-full overflow-hidden relative"
+          className="flex-1 h-1 sm:h-[4px] bg-[#D3DFE8] rounded-full overflow-hidden relative"
         >
           {index === currentIndex && (
             <motion.div
