@@ -58,9 +58,9 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="relative w-full h-full flex flex-col px-4 md:px-[80px]"
+      className="relative w-full h-full flex flex-col items-center px-[80px]"
     >
-      <div className="flex flex-col items-center w-full flex-1 pt-[60px] gap-6 pb-[100px]">
+      <div className="flex flex-col items-center w-full max-w-[897px] flex-1 pt-[60px] gap-6 pb-[100px] overflow-y-auto">
         <header className="text-center w-full">
           <h1
             className="font-serif-display font-normal italic text-[56px] text-[#005B8F] text-center leading-tight"
@@ -79,14 +79,14 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
           </p>
         </div>
 
-        <div className="w-full max-w-[897px] px-4">
+        <div className="w-full">
           <ProgressBar
             currentIndex={currentQuestionIndex}
             totalQuestions={quizQuestions.length}
           />
         </div>
 
-        <div className="w-full max-w-[897px] px-4">
+        <div className="w-full">
           <QuestionCard
             question={currentQuestion}
             selectedOptionId={selectedOptionId}
@@ -95,7 +95,7 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
         </div>
       </div>
 
-      <div className="absolute bottom-[40px] right-4 md:right-[80px] flex gap-[16px]">
+      <div className="absolute bottom-[40px] right-[80px] flex gap-[16px]">
         <NavigationButtons
           onPrevious={handlePrevious}
           onNext={handleNext}
