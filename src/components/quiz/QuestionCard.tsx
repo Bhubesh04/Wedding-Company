@@ -13,10 +13,10 @@ export const QuestionCard = ({
   onSelectOption,
 }: QuestionCardProps) => {
   return (
-    <div className="flex flex-col items-center mb-10">
+    <div className="flex flex-col items-center w-full mb-10">
       <div
         id={`question-${question.id}`}
-        className="w-[897px] mb-8 bg-[#D3E9F7] rounded-[12px] py-5 px-10 text-center"
+        className="w-full mb-8 bg-[#D3E9F7] rounded-[12px] py-5 px-10 text-center"
         role="heading"
         aria-level={2}
       >
@@ -26,7 +26,7 @@ export const QuestionCard = ({
       </div>
 
       <div
-        className="flex flex-col gap-[14px] w-[897px]"
+        className="flex flex-col gap-[14px] w-full"
         role="radiogroup"
         aria-labelledby={`question-${question.id}`}
       >

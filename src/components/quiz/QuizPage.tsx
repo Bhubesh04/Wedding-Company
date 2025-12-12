@@ -58,10 +58,10 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="relative w-full h-full flex flex-col px-[80px]"
+      className="relative w-full h-full flex flex-col px-4 md:px-[80px]"
     >
       <div className="flex flex-col items-center w-full flex-1 pt-[60px] gap-6 pb-[100px]">
-        <header className="text-center">
+        <header className="text-center w-full">
           <h1
             className="font-serif-display font-normal italic text-[56px] text-[#005B8F] text-center leading-tight"
             style={{ letterSpacing: '-2px' }}
@@ -70,7 +70,7 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
           </h1>
         </header>
 
-        <div className="text-center">
+        <div className="text-center w-full">
           <p
             className="font-manrope font-normal text-[16px] leading-[22px] text-[#15313D] text-center"
             style={{ letterSpacing: '-0.2px' }}
@@ -79,21 +79,23 @@ export const QuizPage = ({ onComplete }: QuizPageProps) => {
           </p>
         </div>
 
-        <div className="w-full max-w-[897px]">
+        <div className="w-full max-w-[897px] px-4">
           <ProgressBar
             currentIndex={currentQuestionIndex}
             totalQuestions={quizQuestions.length}
           />
         </div>
 
-        <QuestionCard
-          question={currentQuestion}
-          selectedOptionId={selectedOptionId}
-          onSelectOption={handleSelectOption}
-        />
+        <div className="w-full max-w-[897px] px-4">
+          <QuestionCard
+            question={currentQuestion}
+            selectedOptionId={selectedOptionId}
+            onSelectOption={handleSelectOption}
+          />
+        </div>
       </div>
 
-      <div className="absolute bottom-[40px] right-[80px] flex gap-[16px]">
+      <div className="absolute bottom-[40px] right-4 md:right-[80px] flex gap-[16px]">
         <NavigationButtons
           onPrevious={handlePrevious}
           onNext={handleNext}
