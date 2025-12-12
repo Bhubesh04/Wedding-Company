@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('/Cloud.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.quiz-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #D0E8FF;
+  opacity: 0.5;
+}
+
+.quiz-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(173, 216, 230, 0.3) 0%,
+    rgba(135, 206, 250, 0.2) 50%,
+    rgba(176, 224, 230, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.main-card-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 30%, #ffffff 100%);
+}
