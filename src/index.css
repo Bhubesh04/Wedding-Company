@@ -20,7 +20,7 @@ body {
 .quiz-background {
   position: absolute;
   inset: 0;
-  background-image: url('/Cloud.png');
+  background-image: url('/cloud.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
